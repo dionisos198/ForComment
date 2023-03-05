@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+<div class="container">
+  <div th:replace="fragments/bodyHeader :: bodyHeader" />
+  <div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>활동이름</th>
+        <th>어떤 활동인가요?</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="act : ${acts}">
+        <td th:text="${act.name}"></td>
+        <td th:text="${act.status}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div th:replace="fragments/footer :: footer" />
+</div> <!-- /container -->
+</body>
+</html>
